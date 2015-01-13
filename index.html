@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="ipartcontacts">
+	<head>
+		<!-- Angulars Material CSS now available via Google CDN; version 0.6 used here -->
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Selfie Station</title>
+
+		<link rel="stylesheet" href="components/angular-material/angular-material.min.css">
+		<!-- Angular Material Dependencies -->
+		<script src="components/hammerjs/hammer.min.js"></script>
+		<script src="components/angular/angular.min.js"></script>
+		<script src="components/angular-animate/angular-animate.min.js"></script>
+		<script src="components/angular-aria/angular-aria.min.js"></script>
+
+		<!-- Angular Material Javascript now available via Google CDN; version 0.6 used here -->
+		<script src="components/angular-material/angular-material.min.js"></script>
+		<script src="javascripts/selfiestatiionJsonData.js"></script>
+		<script src="javascripts/selfiestatiion.js"></script>
+
+		<style>
+			.listdemoBasicUsage .face {
+			  border-radius: 30px;
+			  border: 1px solid #ddd;
+			  width: 48px;
+			  margin: 16px; }
+		</style>
+
+	</head>
+	<body>
+
+		<md-toolbar class="demo-toolbar md-default-theme">
+	        <div class="md-toolbar-tools">
+	          <span class="ng-binding">Selfie Station</span><span style='font-size:10px'>Powered by BH_Lin</span>
+	        </div>
+      	</md-toolbar>
+		<div ng-controller="AppCtrl" class='listdemoBasicUsage'>
+			<md-content>
+				<md-text-float label="Search" ng-model="searchText" style='padding-left: 20px'> </md-text-float>
+				<md-list>
+				    <md-item ng-repeat="place in kireiplaces|filter: searchText">
+				    	<md-item-content>
+				          	<div class="md-tile-content">
+				            	<h3>{{place.location}}</h3>
+				            	<h4>{{place.opentime}}</h4>
+				            	<p>
+				            		Address: <a href='http://maps.google.com.tw/?q={{place.address}}' target='_blank'>{{place.address}}</a><br>
+				            	</p>
+				            	<p>
+				            		Distance: {{place.distance}} M<br>
+				            	</p>
+				          	</div>
+				        </md-item-content>
+					</md-item>
+		    	</md-list>
+		  </md-content>
+		</div>
+	</body>
+</html>
