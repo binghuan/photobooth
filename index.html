@@ -30,31 +30,54 @@
 	</head>
 	<body>
 
-		<md-toolbar class="demo-toolbar md-default-theme">
-	        <div class="md-toolbar-tools">
-	          <span class="ng-binding">Selfie Station</span><span style='font-size:10px'>Powered by BH_Lin</span>
-	        </div>
-      	</md-toolbar>
-		<div ng-controller="AppCtrl" class='listdemoBasicUsage'>
+		<!--
+		<div class="footer" style="position:fixed; bottom: 0;left: 50%;width: 100%;">
+        	<p class='label label-success'>&copy; Studio Bing-Huan 2014</p>
+      	</div>
+		-->
+
+		<div ng-controller="AppCtrl" class='listdemoBasicUsage' layout="column" layout-fill>
+
+			<md-toolbar md-scroll-shrink>
+				<div class="md-toolbar-tools">
+			      <h3>
+			        <span class="ng-binding">Selfie Station</span>&nbsp;&nbsp;<span style='font-size:10px'>Powered by BH_Lin</span>
+			      </h3>
+			    </div>
+			</md-toolbar>
 			<md-content>
 				<md-text-float label="Search" ng-model="searchText" style='padding-left: 20px'> </md-text-float>
+				<section layout="vertical" layout-sm="horizontal" layout-align="center center">
+					<md-progress-circular md-mode="indeterminate" ng-show="isLoading" ng-init="isLoading = true"></md-progress-circular>
+        		</section>
+
 				<md-list>
-				    <md-item ng-repeat="place in kireiplaces|filter: searchText">
-				    	<md-item-content>
-				          	<div class="md-tile-content">
-				            	<h3>{{place.location}}</h3>
-				            	<h4>{{place.opentime}}</h4>
-				            	<p>
-				            		Address: <a href='http://maps.google.com.tw/?q={{place.address}}' target='_blank'>{{place.address}}</a><br>
-				            	</p>
-				            	<p>
-				            		Distance: {{place.distance}} M<br>
-				            	</p>
-				          	</div>
-				        </md-item-content>
-					</md-item>
-		    	</md-list>
-		  </md-content>
+					    <md-item ng-repeat="place in kireiplaces|filter: searchText">
+					    	<md-item-content>
+					          	<div class="md-tile-content">
+									<div layout="row">
+										<div flex="70">
+										    <h3>{{place.location}}</h3>
+							            	<h4>{{place.opentime}}</h4>
+							            	<p>
+							            		<a href='http://maps.google.com.tw/?q={{place.address}}' target='_blank'>{{place.address}}</a><br>
+							            	</p>
+									  	</div>
+									  	<div flex="30">
+										  	<div layout="vertical" layout-align="end center">
+												<md-button disabled="true" class="md-raised" md-theme="green">
+        											{{place.distance}}<br>公尺
+      											</md-button>
+										  	</div>
+										</div>
+									</div>
+					          	</div>
+					        </md-item-content>
+							<md-divider ng-if="!$last"></md-divider>
+						</md-item>
+		    		</md-list>
+		  		</md-content>
+		  	</div>
 		</div>
 	</body>
 </html>

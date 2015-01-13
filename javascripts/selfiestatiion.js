@@ -32,9 +32,6 @@ angular.module('ipartcontacts', ['ngMaterial'])
 
 	console.log("checkpoint6");
 
-    //$scope.todos =contactsJsonData;
-    //console.log($scope.todos);
-
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position){
 
@@ -50,6 +47,7 @@ angular.module('ipartcontacts', ['ngMaterial'])
 
         $scope.$apply(function(){
           $scope.kireiplaces = importedDataArray;
+          $scope.isLoading = false;
         });
     });
   }

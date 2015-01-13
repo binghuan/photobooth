@@ -3,8 +3,8 @@ var importedDataArray = [
 "location": "文山第二戶政 (景美所)*",
 "opentime": "08:15~20:15",
 "address": "台北市文山區興隆路2段160號3樓(大廳內)",
-"latitude": "34.055159",
-"longitude": "111.743242"
+"latitude": "25.0015855",
+"longitude": "121.5514199"
 },
 {
 "location": "萬芳醫院(牙科旁)*",
