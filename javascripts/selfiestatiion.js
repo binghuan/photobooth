@@ -32,18 +32,24 @@ angular.module('ipartcontacts', ['ngMaterial'])
 
 	console.log("checkpoint6");
 
+  var time = new Date();
   if (navigator.geolocation) {
+    console.log("ready to get geolocation !!");
     navigator.geolocation.getCurrentPosition(function(position){
 
         console.log("get geolocation: ", position);
-
+        var diffTime = (new Date()) - time;
+        console.log(diffTime/1000);
         for(var i =0; i< importedDataArray.length; i++) {
           importedDataArray[i].distance = calculateDistance(
-            position.coords.latitude, position.coords.longitude,
-            importedDataArray[i].latitude, importedDataArray[i].longitude);
+          position.coords.latitude, position.coords.longitude,
+          importedDataArray[i].latitude, importedDataArray[i].longitude);
+          //console.log("check#", i);
         }
+        var diffTime = (new Date()) - time;
+        console.log(diffTime/1000);
 
-        importedDataArray.sort(sortDistance);
+        //importedDataArray.sort(sortDistance);
 
         $scope.$apply(function(){
           $scope.kireiplaces = importedDataArray;

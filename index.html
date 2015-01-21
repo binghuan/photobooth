@@ -62,7 +62,7 @@
         		</section>
 
 				<md-list>
-					    <md-item ng-repeat="place in kireiplaces|filter: searchText">
+					    <md-item ng-repeat="place in kireiplaces|filter: searchText| orderBy:'distance'">
 					    	<md-item-content>
 					          	<div class="md-tile-content">
 									<div layout="row">
