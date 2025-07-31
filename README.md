@@ -138,6 +138,45 @@ The app is designed to be deployed as a static website. It's currently hosted on
 - Touch-friendly buttons and interactions
 - Color-coded distance indicators
 
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to add more photo booth locations or improve the application:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-locations`)
+3. Add your changes to `javascripts/selfiestatiionJsonData.js` for new locations
+4. Commit your changes (`git commit -am 'Add new photo booth locations'`)
+5. Push to the branch (`git push origin feature/new-locations`)
+6. Create a Pull Request
+
+### Adding New Locations
+
+To add new photo booth locations, add entries to the `importedDataArray` in `selfiestatiionJsonData.js`:
+
+```javascript
+{
+  "location": "Location Name",
+  "opentime": "08:00~22:00",
+  "address": "Complete address",
+  "latitude": "25.0000000",
+  "longitude": "121.0000000"
+}
+```
+
+## 🐛 Known Issues
+
+- Geolocation may not work on some older browsers
+- Distance calculation assumes straight-line distance, not walking/driving distance
+- Some photo booth locations may have outdated operating hours
+
+## 🔮 Future Enhancements
+
+- Real-time availability status
+- User reviews and ratings
+- Photo booth type categories (color, black & white, etc.)
+- Walking directions integration
+- Offline support with service workers
+
 ## 👨‍💻 Author
 
 **Bing-Huan Lin**
