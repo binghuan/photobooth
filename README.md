@@ -1,6 +1,12 @@
 
 # Photo Booth Finder
 
+## Feature overview
+
+![photobooth — feature flow diagram](README-assets/project-preview.svg)
+
+Conceptual feature flow based on this repository; this is a documentation diagram, not an application screenshot.
+
 <img src="Icon.png" width="auto" height="240px">
 
 A location-based web application to help users find nearby photo booths in Taiwan. The app uses geolocation to calculate distances and provides a searchable list of photo booth locations with their operating hours and addresses.
